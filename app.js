@@ -1,6 +1,6 @@
 //reference of page elements
 var addButton = document.getElementById("add");
-var clear = document.getElementById("clear");
+var clearButton = document.getElementById("clear");
 var taskInput = document.getElementById("task");
 var taskList = document.getElementById("tasklist");
 
@@ -12,6 +12,11 @@ taskInput.addEventListener("keyup", function(){
         listFunction();
     }
     
+});
+
+clearButton.addEventListener("click", function(){
+    taskList.innerHTML = "";
+
 });
 
 
