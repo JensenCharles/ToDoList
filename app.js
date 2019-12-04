@@ -27,9 +27,21 @@ clearButton.addEventListener("click", function(){
         var taskText = document.createTextNode(task);
         newItem.appendChild(taskText);
         taskInput.value = "";
+
+        var removeButton = document.createElement("button");
+        removeButton.innerHTML = "DONE";
+        removeButton.className = "remove";
+        removeButton.addEventListener("click", removeTask);
+        newItem.appendChild(removeButton);
         taskList.appendChild(newItem);
     }
     else{
         alert("Task cannot be empty");
     }
 };
+
+function removeTask(e){
+    var taskItem = e.target.parentElement;
+    taskList.removeChild(taskItem);
+
+}
